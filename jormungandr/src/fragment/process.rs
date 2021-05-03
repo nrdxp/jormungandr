@@ -1,6 +1,6 @@
 use crate::{
     fragment::{Logs, Pools},
-    intercom::{NetworkMsg, TransactionMsg},
+    intercom::{NetworkMsg, NotifierMsg, TransactionMsg},
     stats_counter::StatsCounter,
     utils::{
         async_msg::{MessageBox, MessageQueue},
@@ -39,7 +39,9 @@ impl Process {
         pool_max_entries: usize,
         logs_max_entries: usize,
         network_msg_box: MessageBox<NetworkMsg>,
+        notifier_msg_box: MessageBox<NotifierMsg>,
     ) -> Self {
+        let logs = Logs::new(logs_max_entries, notifier_msg_box);
         Process {
             pool_max_entries,
             logs_max_entries,
