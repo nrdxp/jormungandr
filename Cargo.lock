@@ -1141,6 +1141,7 @@ dependencies = [
  "async-graphql",
  "async-graphql-warp",
  "backoff",
+ "base64 0.13.0",
  "cardano-legacy-address",
  "chain-addr",
  "chain-core",

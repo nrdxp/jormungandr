@@ -37,6 +37,7 @@ tonic = "0.4"
 multiaddr = { package = "parity-multiaddr", version = "0.11" }
 rand = "0.8.3"
 rand_chacha = "0.3.0"
+base64 = "0.13.0"
 
 jormungandr-lib = {path = "../jormungandr-lib"}
 
