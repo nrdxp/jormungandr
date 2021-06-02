@@ -24,6 +24,7 @@ pub struct Process {
     pool_max_entries: usize,
     logs_max_entries: usize,
     network_msg_box: MessageBox<NetworkMsg>,
+    notifier_msg_box: MessageBox<NotifierMsg>,
 }
 
 #[derive(Debug, Error)]
@@ -41,11 +42,11 @@ impl Process {
         network_msg_box: MessageBox<NetworkMsg>,
         notifier_msg_box: MessageBox<NotifierMsg>,
     ) -> Self {
-        let logs = Logs::new(logs_max_entries, notifier_msg_box);
         Process {
             pool_max_entries,
             logs_max_entries,
             network_msg_box,
+            notifier_msg_box,
         }
     }
 
@@ -91,7 +92,10 @@ impl Process {
                 "Having 'log_max_entries' < 'pool_max_entries' * n_pools is not recommendend. Overriding 'log_max_entries' to {}", min_logs_size
             );
         }
-        let logs = Logs::new(std::cmp::max(self.logs_max_entries, min_logs_size));
+        let logs = Logs::new(
+            std::cmp::max(self.logs_max_entries, min_logs_size),
+            self.notifier_msg_box.clone(),
+        );
 
         let mut wakeup = Box::pin(hourly_wakeup(persistent_log_dir.is_some()));
 

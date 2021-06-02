@@ -83,7 +83,7 @@ impl Logs {
                 // state transition.
                 let mut entry =
                     FragmentLog::new(fragment_id.clone().into_hash(), FragmentOrigin::Network);
-                entry.modify(status);
+                entry.modify(status.clone());
                 self.entries.put(fragment_id, entry);
 
                 // TODO: not sure about this, this could be outside the branches also, but that
