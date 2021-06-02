@@ -121,9 +121,7 @@ impl MessageProcessor {
                                 mempool_event::Event::Inserted(MempoolFragmentInserted {})
                             }
                             FragmentStatus::Rejected { reason } => {
-                                mempool_event::Event::Rejected(MempoolFragmentRejected {
-                                    reason: reason.clone(),
-                                })
+                                mempool_event::Event::Rejected(MempoolFragmentRejected { reason })
                             }
                             FragmentStatus::InABlock { block, .. } => {
                                 mempool_event::Event::InABlock(MempoolFragmentInABlock {
