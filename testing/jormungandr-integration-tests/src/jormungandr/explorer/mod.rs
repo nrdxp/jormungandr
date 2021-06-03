@@ -22,7 +22,7 @@ pub fn explorer_schema_diff_test() {
     use assert_fs::{fixture::PathChild, TempDir};
 
     let temp_dir = TempDir::new().unwrap();
-    let config = ConfigurationBuilder::new().with_explorer().build(&temp_dir);
+    let config = ConfigurationBuilder::new().build(&temp_dir);
 
     let jormungandr = Starter::new()
         .temp_dir(temp_dir)
@@ -60,9 +60,7 @@ pub fn explorer_sanity_test() {
     let receiver = startup::create_new_account_address();
 
     let mut config = ConfigurationBuilder::new();
-    config
-        .with_consensus_genesis_praos_active_slot_coeff(ActiveSlotCoefficient::MAXIMUM)
-        .with_explorer();
+    config.with_consensus_genesis_praos_active_slot_coeff(ActiveSlotCoefficient::MAXIMUM);
 
     let (jormungandr, initial_stake_pools) =
         startup::start_stake_pool(&[faucet.clone()], &[], &mut config).unwrap();

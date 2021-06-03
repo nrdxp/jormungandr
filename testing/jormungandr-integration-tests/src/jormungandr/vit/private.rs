@@ -83,7 +83,6 @@ pub fn jcli_e2e_flow_private_vote() {
     let vote_plan_cert = jcli.certificate().new_vote_plan(vote_plan_json.path());
 
     let config = ConfigurationBuilder::new()
-        .with_explorer()
         .with_funds(vec![
             alice.to_initial_fund(wallet_initial_funds),
             bob.to_initial_fund(wallet_initial_funds),
