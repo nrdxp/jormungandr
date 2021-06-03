@@ -461,13 +461,14 @@ async fn process_leadership_block(
     // Track block as new new tip block
     stats_counter.set_tip_block(Arc::new(block.clone()));
 
-    if notifier_msg_box
+    if let Err(err) = notifier_msg_box
         .send(NotifierMsg::NewBlock(block.clone()))
         .await
-        .is_err()
     {
-        // TODO: add an error type?
-        tracing::error!("Cannot propagate block to blockchain event notifier");
+        tracing::error!(
+            "Cannot propagate block to blockchain event notifier: {}",
+            err
+        )
     }
 
     if let Some(mut msg_box) = explorer_msg_box {
