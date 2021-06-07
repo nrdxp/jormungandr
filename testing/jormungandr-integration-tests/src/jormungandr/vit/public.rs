@@ -182,19 +182,7 @@ pub fn test_vote_flow_bft() {
         .send_vote_cast(&mut bob, &vote_plan, 0, &favorable_choice, &jormungandr)
         .unwrap();
 
-    let rewards_before = jormungandr
-        .explorer()
-        .last_block()
-        .unwrap()
-        .data
-        .unwrap()
-        .tip
-        .block
-        .treasury
-        .unwrap()
-        .rewards
-        .parse::<u64>()
-        .unwrap();
+    let rewards_before: u64 = unimplemented!("treasury query not supported by external explorer");
 
     wait_for_epoch(1, jormungandr.rest());
 
@@ -214,19 +202,7 @@ pub fn test_vote_flow_bft() {
         jormungandr.rest().vote_plan_statuses().unwrap(),
     );
 
-    let rewards_after = jormungandr
-        .explorer()
-        .last_block()
-        .unwrap()
-        .data
-        .unwrap()
-        .tip
-        .block
-        .treasury
-        .unwrap()
-        .rewards
-        .parse::<u64>()
-        .unwrap();
+    let rewards_after: u64 = unimplemented!("treasury query not supported by external explorer");
 
     assert!(
         rewards_after == (rewards_before + rewards_increase),
@@ -323,19 +299,7 @@ pub fn test_vote_flow_praos() {
 
     wait_for_epoch(3, jormungandr.rest());
 
-    let rewards_after = jormungandr
-        .explorer()
-        .last_block()
-        .unwrap()
-        .data
-        .unwrap()
-        .tip
-        .block
-        .treasury
-        .unwrap()
-        .rewards
-        .parse::<u64>()
-        .unwrap();
+    let rewards_after: u64 = unimplemented!("treasury query not supported by external explorer");
 
     // We want to make sure that our small rewards increase is reflexed in current rewards amount
     assert!(
@@ -423,19 +387,7 @@ pub fn jcli_e2e_flow() {
 
     alice.confirm_transaction();
 
-    let rewards_before = jormungandr
-        .explorer()
-        .last_block()
-        .unwrap()
-        .data
-        .unwrap()
-        .tip
-        .block
-        .treasury
-        .unwrap()
-        .rewards
-        .parse::<u64>()
-        .unwrap();
+    let rewards_before: u64 = unimplemented!("treasury query not supported by external explorer");
 
     time::wait_for_epoch(1, jormungandr.rest());
 
@@ -529,19 +481,7 @@ pub fn jcli_e2e_flow() {
         3
     );
 
-    let rewards_after = jormungandr
-        .explorer()
-        .last_block()
-        .unwrap()
-        .data
-        .unwrap()
-        .tip
-        .block
-        .treasury
-        .unwrap()
-        .rewards
-        .parse::<u64>()
-        .unwrap();
+    let rewards_after: u64 = unimplemented!("treasury query not supported by external explorer");
 
     // We want to make sure that our small rewards increase is reflexed in current rewards amount
     assert!(
