@@ -1,4 +1,3 @@
-use chain_impl_mockchain::block::HeaderId;
 use jormungandr_lib::interfaces::{Cors, Tls};
 use serde::{de, Deserialize};
 use std::{fs::File, net::SocketAddr, path::PathBuf};
@@ -19,7 +18,6 @@ pub enum Error {
 #[derive(Debug)]
 pub struct Settings {
     pub node: Uri,
-    pub block0_hash: HeaderId,
     pub binding_address: SocketAddr,
     pub address_bech32_prefix: String,
     pub tls: Option<Tls>,
@@ -39,10 +37,8 @@ impl Settings {
 
         let node = cmd
             .node
-            .or(file.host)
+            .or(file.node)
             .unwrap_or_else(|| "127.0.0.1:8299".parse().unwrap());
-
-        let block0_hash = cmd.block0_hash.parse().unwrap();
 
         let binding_address = cmd
             .binding_address
@@ -59,7 +55,6 @@ impl Settings {
 
         Ok(Settings {
             node,
-            block0_hash,
             binding_address,
             address_bech32_prefix,
             tls,
@@ -73,7 +68,6 @@ impl Settings {
 struct CommandLine {
     #[structopt(long)]
     pub node: Option<Uri>,
-    pub block0_hash: String,
     #[structopt(long)]
     pub binding_address: Option<SocketAddr>,
     #[structopt(long)]
@@ -88,7 +82,7 @@ pub struct Config {
     pub tls: Option<Tls>,
     pub cors: Option<Cors>,
     #[serde(default, deserialize_with = "deserialize_uri_string")]
-    pub host: Option<Uri>,
+    pub node: Option<Uri>,
     pub binding_address: Option<SocketAddr>,
     pub address_bech32_prefix: Option<String>,
 }

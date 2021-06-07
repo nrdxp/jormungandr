@@ -76,7 +76,6 @@ pub fn explorer_sanity_test() {
         handler: Some(
             Command::new(path)
                 .args(&[
-                    block0_hash.as_ref(),
                     "--node",
                     format!("http://{}", jormungandr.address().to_string()).as_ref(),
                     "--binding-address",
