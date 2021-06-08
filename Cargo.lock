@@ -1867,8 +1867,6 @@ name = "jormungandr"
 version = "0.11.1"
 dependencies = [
  "arc-swap",
- "async-graphql",
- "async-graphql-warp",
  "async-trait",
  "base64 0.13.0",
  "bech32",
