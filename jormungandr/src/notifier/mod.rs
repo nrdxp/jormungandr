@@ -88,17 +88,10 @@ impl MessageProcessor {
                 .await;
         });
 
-        let tip_sender = self.tip_sender;
-        let block_sender = self.block_sender;
-        let mempool_sender = self.mempool_sender;
-
         while let Some(input) = queue.next().await {
-            let tip_sender = Arc::clone(&tip_sender);
-            let block_sender = Arc::clone(&block_sender);
-            let mempool_sender = Arc::clone(&mempool_sender);
-
             match input {
                 Message::NewBlock(block) => {
+                    let block_sender = Arc::clone(&self.block_sender);
                     info.spawn("notifier broadcast block", async move {
                         if let Err(_err) = block_sender.send(Block {
                             content: block.serialize_as_vec().unwrap(),
@@ -106,6 +99,7 @@ impl MessageProcessor {
                     });
                 }
                 Message::NewTip(block_id) => {
+                    let tip_sender = Arc::clone(&self.tip_sender);
                     info.spawn("notifier broadcast new tip", async move {
                         if let Err(_err) = tip_sender.send(BlockId {
                             content: block_id.serialize_as_vec().unwrap(),
@@ -115,6 +109,7 @@ impl MessageProcessor {
                     });
                 }
                 Message::FragmentLog(fragment_id, status) => {
+                    let mempool_sender = Arc::clone(&self.mempool_sender);
                     info.spawn("notifier broadcast mempool update", async move {
                         let event = match status {
                             FragmentStatus::Pending => {
