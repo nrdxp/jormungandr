@@ -31,7 +31,7 @@ chain-crypto    = { git = "https://github.com/input-output-hk/chain-libs.git", b
 chain-time    = { git = "https://github.com/input-output-hk/chain-libs.git", branch = "master" }
 chain-vote = { git = "https://github.com/input-output-hk/chain-libs.git", branch = "master", features = ["p256k1"] }
 jormungandr-lib = { path = "../jormungandr-lib" }
-gtmpl = "0.6.0"
+gtmpl = "0.7.0"
 ed25519-bip32 = "0.3"
 thiserror = "1.0"
 bytes = "1.0"
