@@ -425,7 +425,7 @@ dependencies = [
 [[package]]
 name = "cardano-legacy-address"
 version = "0.1.1"
-source = "git+https://github.com/input-output-hk/chain-libs.git?branch=master#a12e68d452990ddd7e2ff5980628152ac7ce2329"
+source = "git+https://github.com/input-output-hk/chain-libs.git?branch=master#8b051298e4dd74ed7314f10b81a341439e7e219d"
 dependencies = [
  "cbor_event",
  "chain-ser",
@@ -469,7 +469,7 @@ checksum = "baf1de4339761588bc0619e3cbc0120ee582ebb74b53b4efbf79117bd2da40fd"
 [[package]]
 name = "chain-addr"
 version = "0.1.0"
-source = "git+https://github.com/input-output-hk/chain-libs.git?branch=master#a12e68d452990ddd7e2ff5980628152ac7ce2329"
+source = "git+https://github.com/input-output-hk/chain-libs.git?branch=master#8b051298e4dd74ed7314f10b81a341439e7e219d"
 dependencies = [
  "bech32",
  "chain-core",
@@ -481,7 +481,7 @@ dependencies = [
 [[package]]
 name = "chain-core"
 version = "0.1.0"
-source = "git+https://github.com/input-output-hk/chain-libs.git?branch=master#a12e68d452990ddd7e2ff5980628152ac7ce2329"
+source = "git+https://github.com/input-output-hk/chain-libs.git?branch=master#8b051298e4dd74ed7314f10b81a341439e7e219d"
 dependencies = [
  "chain-ser",
 ]
@@ -489,7 +489,7 @@ dependencies = [
 [[package]]
 name = "chain-crypto"
 version = "0.1.0"
-source = "git+https://github.com/input-output-hk/chain-libs.git?branch=master#a12e68d452990ddd7e2ff5980628152ac7ce2329"
+source = "git+https://github.com/input-output-hk/chain-libs.git?branch=master#8b051298e4dd74ed7314f10b81a341439e7e219d"
 dependencies = [
  "bech32",
  "cryptoxide",
@@ -509,7 +509,7 @@ dependencies = [
 [[package]]
 name = "chain-impl-mockchain"
 version = "0.1.0"
-source = "git+https://github.com/input-output-hk/chain-libs.git?branch=master#a12e68d452990ddd7e2ff5980628152ac7ce2329"
+source = "git+https://github.com/input-output-hk/chain-libs.git?branch=master#8b051298e4dd74ed7314f10b81a341439e7e219d"
 dependencies = [
  "cardano-legacy-address",
  "chain-addr",
@@ -525,7 +525,7 @@ dependencies = [
  "lazy_static",
  "quickcheck",
  "quickcheck_macros",
- "rand_chacha 0.3.0",
+ "rand_chacha 0.3.1",
  "rand_core 0.6.2",
  "rayon",
  "sparse-array",
@@ -538,7 +538,7 @@ dependencies = [
 [[package]]
 name = "chain-network"
 version = "0.1.0"
-source = "git+https://github.com/input-output-hk/chain-libs.git?branch=master#a12e68d452990ddd7e2ff5980628152ac7ce2329"
+source = "git+https://github.com/input-output-hk/chain-libs.git?branch=master#8b051298e4dd74ed7314f10b81a341439e7e219d"
 dependencies = [
  "async-trait",
  "chain-crypto",
@@ -554,12 +554,12 @@ dependencies = [
 [[package]]
 name = "chain-ser"
 version = "0.1.0"
-source = "git+https://github.com/input-output-hk/chain-libs.git?branch=master#a12e68d452990ddd7e2ff5980628152ac7ce2329"
+source = "git+https://github.com/input-output-hk/chain-libs.git?branch=master#8b051298e4dd74ed7314f10b81a341439e7e219d"
 
 [[package]]
 name = "chain-storage"
 version = "0.1.0"
-source = "git+https://github.com/input-output-hk/chain-libs.git?branch=master#a12e68d452990ddd7e2ff5980628152ac7ce2329"
+source = "git+https://github.com/input-output-hk/chain-libs.git?branch=master#8b051298e4dd74ed7314f10b81a341439e7e219d"
 dependencies = [
  "criterion",
  "data-pile",
@@ -572,7 +572,7 @@ dependencies = [
 [[package]]
 name = "chain-test-utils"
 version = "0.1.0"
-source = "git+https://github.com/input-output-hk/chain-libs.git?branch=master#a12e68d452990ddd7e2ff5980628152ac7ce2329"
+source = "git+https://github.com/input-output-hk/chain-libs.git?branch=master#8b051298e4dd74ed7314f10b81a341439e7e219d"
 dependencies = [
  "chain-core",
  "quickcheck",
@@ -582,7 +582,7 @@ dependencies = [
 [[package]]
 name = "chain-time"
 version = "0.1.0"
-source = "git+https://github.com/input-output-hk/chain-libs.git?branch=master#a12e68d452990ddd7e2ff5980628152ac7ce2329"
+source = "git+https://github.com/input-output-hk/chain-libs.git?branch=master#8b051298e4dd74ed7314f10b81a341439e7e219d"
 dependencies = [
  "cfg-if 1.0.0",
  "chain-core",
@@ -594,7 +594,7 @@ dependencies = [
 [[package]]
 name = "chain-vote"
 version = "0.1.0"
-source = "git+https://github.com/input-output-hk/chain-libs.git?branch=master#a12e68d452990ddd7e2ff5980628152ac7ce2329"
+source = "git+https://github.com/input-output-hk/chain-libs.git?branch=master#8b051298e4dd74ed7314f10b81a341439e7e219d"
 dependencies = [
  "chain-core",
  "cryptoxide",
@@ -1718,7 +1718,7 @@ dependencies = [
 [[package]]
 name = "imhamt"
 version = "0.1.0"
-source = "git+https://github.com/input-output-hk/chain-libs.git?branch=master#a12e68d452990ddd7e2ff5980628152ac7ce2329"
+source = "git+https://github.com/input-output-hk/chain-libs.git?branch=master#8b051298e4dd74ed7314f10b81a341439e7e219d"
 dependencies = [
  "thiserror",
 ]
@@ -1815,7 +1815,7 @@ dependencies = [
  "jormungandr-lib",
  "predicates",
  "rand 0.8.3",
- "rand_chacha 0.3.0",
+ "rand_chacha 0.3.1",
  "rayon",
  "reqwest",
  "serde",
@@ -1864,7 +1864,7 @@ dependencies = [
  "quickcheck",
  "quickcheck_macros",
  "rand 0.8.3",
- "rand_chacha 0.3.0",
+ "rand_chacha 0.3.1",
  "reqwest",
  "serde",
  "serde_derive",
@@ -1915,7 +1915,7 @@ dependencies = [
  "predicates",
  "prost",
  "rand 0.8.3",
- "rand_chacha 0.3.0",
+ "rand_chacha 0.3.1",
  "rand_core 0.6.2",
  "regex",
  "reqwest",
@@ -1957,7 +1957,7 @@ dependencies = [
  "quickcheck_macros",
  "rand 0.7.3",
  "rand 0.8.3",
- "rand_chacha 0.3.0",
+ "rand_chacha 0.3.1",
  "rand_core 0.6.2",
  "serde",
  "serde_json",
@@ -1993,7 +1993,7 @@ dependencies = [
  "parity-multiaddr",
  "poldercast",
  "rand 0.8.3",
- "rand_chacha 0.3.0",
+ "rand_chacha 0.3.1",
  "rand_core 0.6.2",
  "regex",
  "reqwest",
@@ -2046,7 +2046,7 @@ dependencies = [
  "qrcodegen",
  "quircs",
  "rand 0.8.3",
- "rand_chacha 0.3.0",
+ "rand_chacha 0.3.1",
  "rand_core 0.6.2",
  "regex",
  "reqwest",
@@ -2144,7 +2144,7 @@ checksum = "c5bf8dc22157c7a4d75f1df13a1b75ada82431141423e3d419ac89f2c1fbb298"
 dependencies = [
  "cryptoxide",
  "hex",
- "rand_chacha 0.3.0",
+ "rand_chacha 0.3.1",
  "rand_core 0.6.2",
  "thiserror",
 ]
@@ -3002,7 +3002,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "0ef9e7e66b4468674bfcb0c81af8b7fa0bb154fa9f28eb840da5c447baeb8d7e"
 dependencies = [
  "libc",
- "rand_chacha 0.3.0",
+ "rand_chacha 0.3.1",
  "rand_core 0.6.2",
  "rand_hc 0.3.0",
 ]
@@ -3019,9 +3019,9 @@ dependencies = [
 
 [[package]]
 name = "rand_chacha"
-version = "0.3.0"
+version = "0.3.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "e12735cf05c9e10bf21534da50a147b924d555dc7a547c42e6bb2d5b6017ae0d"
+checksum = "e6c10a63a0fa32252be49d21e7709d4d4baf8d231c2dbce1eaa8141b9b127d88"
 dependencies = [
  "ppv-lite86",
  "rand_core 0.6.2",
@@ -3496,7 +3496,7 @@ dependencies = [
 [[package]]
 name = "sparse-array"
 version = "0.1.0"
-source = "git+https://github.com/input-output-hk/chain-libs.git?branch=master#a12e68d452990ddd7e2ff5980628152ac7ce2329"
+source = "git+https://github.com/input-output-hk/chain-libs.git?branch=master#8b051298e4dd74ed7314f10b81a341439e7e219d"
 
 [[package]]
 name = "spin"
@@ -4164,7 +4164,7 @@ dependencies = [
 [[package]]
 name = "typed-bytes"
 version = "0.1.0"
-source = "git+https://github.com/input-output-hk/chain-libs.git?branch=master#a12e68d452990ddd7e2ff5980628152ac7ce2329"
+source = "git+https://github.com/input-output-hk/chain-libs.git?branch=master#8b051298e4dd74ed7314f10b81a341439e7e219d"
 
 [[package]]
 name = "typenum"
